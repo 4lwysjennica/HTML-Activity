@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 1</title>
+</head>
+<body>
+    <h3>Thank you for answering!</h3>
+
+    <script>
+        function getAge(dateString) 
+    {
+        var today = new Date();
+        var birthDate = new Date(dateString);
+        var age = today.getFullYear() - birthDate.getFullYear();
+        var m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) 
+        {
+            age--;
+        }
+        return age;
+    }
+    // To calculate age:
+    var year_born = prompt("PLEASE ENTER YOUR YEAR OF BIRTH:", "Example...");
+    var d = new Date();
+    var n = d.getFullYear();
+    function getAge(birthYear){
+        var currentDate = new Date();
+        var currentYear = currentDate.getFullYear();
+        age = currentYear - birthYear;
+        return age;
+    }
+    calculatedAge = getAge(year_born);
+    alert("I think, " + "you are " + calculatedAge + " years old now!");
+    //Month -> 0= Jan, 11=Dec | myDate = 6 Dec 2019 10:45
+    var myDate = new Date(2019, 11, 06, 10, 45);
+    var dayInYear = Math.floor((myDate - new Date(myDate.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
+    </script>
+</body>
+</html>

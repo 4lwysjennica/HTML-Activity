@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 5</title>
+</head>
+<body>
+<p>Click the button to order a COFFEE.</p>
+
+<button onclick="orderCoffee()">Order here</button>
+
+<p id="r"></p>
+<p id="d"></p>
+<p id="m"></p>
+<p id="s"></p>
+
+<script>
+function orderCoffee() {
+
+  var reg = prompt("how many bags of Regular Coffee do you want?");
+  var deca = prompt("how many bags of Decaffine Coffee do you want?");
+  var moca = prompt("how many bags of MochCcoffee do you want?");
+  
+  
+  var treg;
+  var tdeca;
+  var tmoca;
+  var tsum = 0 ;
+  
+  if (reg != null) {
+    treg = reg*9 ;
+    document.getElementById("r").innerHTML =
+    "You purchased "+ reg + " bags of regular, totaling "+ treg +" dollars. ";
+  }
+  
+  if (deca != null) {
+      tdeca = deca*8 ;
+    document.getElementById("d").innerHTML =
+    "You purchased "+ deca + " bags of decaf, totaling "+ tdeca +" dollars. ";
+  }
+  
+  if (moca != null) {
+      tmoca = moca*11 ;
+    document.getElementById("m").innerHTML =
+    "You purchased "+ moca + " bags of mocha, totaling " + tmoca + " dollars. ";
+  }
+  
+  
+  tsum = (treg+tdeca+tmoca) ;
+  if (tsum > 100) {
+      tsum = tsum - 15;
+    document.getElementById("s").innerHTML =
+    "Your total purchase cost is "+ tsum + " dollars. ";
+  }
+  else {
+      document.getElementById("s").innerHTML =
+    "Your total purchase cost is "+ tsum + " dollars. ";
+  }
+  
+}
+</script>
+    
+</body>
+</html>

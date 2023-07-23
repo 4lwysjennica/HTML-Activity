@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The Result:</h1>
+    <script>
+        var userChoice = prompt("Pick 0 for Rock, 1 for Paper, 2 for Scissor");
+        var user=parseInt(userChoice);
+        if (! userChoice) 
+        {
+            document.write("<p>Please enter choice between 0-2</p>");
+        }
+        else 
+        {
+            document.write("<p>Player 1:" + " " + userChoice + "</p>");
+        }
+        var computerChoice = Math.floor(Math.random() * 3);
+        document.write("<p>Computer:" + " " + computerChoice + "</p>");
+        var compare = function(choice1,choice2)
+        {
+        if (choice1 == choice2)
+            {
+                return "It's a tie!";
+            }
+        if (choice1 == 0)
+            {
+        if (choice2 == 2)
+                {
+                return "Congratulations you won!";
+                } 
+                else
+                {
+                return "Sorry the computer won!";
+                }
+            }
+        if (choice1 == 1)
+            {
+        if (choice2 == 0) 
+                {
+                return "Congratulations you won!";
+                }
+                else 
+                {
+                    return "Sorry the computer won!";
+                }
+            }
+         if (choice1 == 2)
+            {
+        if (choice2 == 1) 
+                {
+                return "Sorry the computer won!";
+                }
+                else
+                {
+                return "Congratulations you won!";
+                }
+            }
+        };
+        var result = compare(userChoice,computerChoice);
+        document.write("<hr>" + result);
+    </script>
+</body>
+</html>
